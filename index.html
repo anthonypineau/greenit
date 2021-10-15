@@ -1,12 +1,322 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GreenIt</title>
-</head>
-<body>
-    
-</body>
+<html lang="fr">
+    <head>
+        <title>GreenIT | Calculatrice</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="./src/css/style.css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+        <script src="./src/js/jquery.js"></script>
+        <script src="./src/js/scripts.js"></script>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <script type="text/javascript">
+            var _paq = window._paq || [];
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function() {
+                var u="//analytics.institutnr.org/";
+                _paq.push(['setTrackerUrl', u+'matomo.php']);
+                _paq.push(['setSiteId', '1']);
+                var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];g.type='text/javascript';
+                g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);})();
+        </script>
+    </head>
+    <body>
+        <div id="page">
+            <div id="content">
+                <div class="background-image"></div>
+                <div id="data">
+                    <div id="device" class="section">
+                        <div class="input_part">
+                            <h2>EQUIPEMENT</h2>
+                            <div class="groupe">
+                                <div class="qOne">
+                                    <div class="question">Mon ordinateur portable (ou équivalent)</div>
+                                    <div class="answer">
+                                        <select id="sel_laptop"></select>
+                                        <a href="#" id="device_link" style="display:none;" target="_blank">
+                                            <img src="img/out.png" />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="qTwo">
+                                    <div class="question">Durée d'utilisation (Années)</div>
+                                    <div class="answer">
+                                        <select id="sel_lastingLaptop">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3" selected=selected>3 - Défaut</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="qOne">
+                                <div class="question">Nombre d'écrans supplémentaires</div>
+                                <div class="answer">
+                                    <select id="screen">
+                                        <option value="0">0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="qTwo" id="smartphone">
+                                <div class="question">Ai-je un smartphone ?</div>
+                                <div class="answer">
+                                    <div class="toggle-radio">
+                                        <input type="radio" value="yes" name="phone" id="yes" checked>
+                                        <input type="radio" value="no" name="phone" id="no">
+                                        <div class="switch">
+                                            <label for="yes">Oui</label>
+                                            <label for="no">Non</label>
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="boxes">
+                            <div class="box">
+                                <h3>PRODUCTION</h3>
+                                <div id="laptop_production"></div>
+                                <div class="line78">&nbsp;</div>
+                            </div>
+                            <div class="box">
+                                <h3>USAGE</h3>
+                                <div id="laptop_use"></div>
+                                <div class="line78">&nbsp;</div>
+                            </div>
+                            <div class="box">
+                                <h3>TOTAL</h3>
+                                <div id="laptop_total" class="line24"></div>
+                                <div id="screen_total" class="line24"></div>
+                                <div id="phone_total" class="line24"></div>
+                            </div>
+                            <div class="box">
+                                <h3>ANNUEL</h3>
+                                <div id="laptop_impact_annuel" class="bold line24"></div>
+                                <div id="screen_total_annuel" class="bold line24"></div>
+                                <div id="phone_total_annuel" class="bold line24"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="cloud" class="section">
+                        <div class="input_part">
+                            <h2>CLOUD</h2>
+                            <div class="question faq">Mon stockage Cloud en Go <a class="info" onclick="return false" href="#">?</a></div>
+                            <div class="encart">Empreinte basée sur une étude Green IT - Frédéric Bordage : 120g Co2/Go stocké</div>
+                            <div class="answer">
+                                <input type="number" id="storage_google" min="0">
+                            </div>
+                            <div class="question faq">Nombre d'emails envoyés<br />par jour <a class="info" onclick="return false" href="#">?</a></div>
+                            <div class="encart">NB : Ces résultats sont basés sur une étude de l'ADEME datant de 2011, intitulée <em>Analyse comparée des impacts environnementaux de la communication par voie électronique</em>, seule étude réalisée sur cet indicateur, s'appuyant sur un scénario où chaque email envoyé pèserait 1Mo. Au regard des différentes études, on peut estimer que la taille moyenne d'un email composé uniquement de texte est au moins 10 fois moins élevée.</div>
+                            <div class="answer">
+                                <select id="sel_emails"></select>
+                            </div>
+                        </div>
+                        <div class="boxes">
+                            <div class="nobox"></div>
+                            <div class="box">
+                                <h3>QUOTIDIEN</h3>
+                                <div class="line24">&nbsp;</div>
+                                <div id="impact_email_quotidien" class="line24"></div>
+                            </div>
+                            <div class="doublebox">
+                                <h3>ANNUEL</h3>
+                                <div class="bold line24" id="storage_google_annuel" class="bold"></div>
+                                <div id="impact_email_annuel" class="bold line24"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="streaming" class="section">
+                        <div class="input_part">
+                            <h2>STREAMING (dans un cadre pro.)</h2>
+                            <div class="question">Heures de streaming vidéo par jour</div>
+                            <div class="answer">
+                                <select id="sel_stream">
+                                    <option value="0">0 min</option>
+                                    <option value="10">10 min</option>
+                                    <option value="20">20 min</option>
+                                    <option value="30">30 min</option>
+                                    <option value="40">40 min</option>
+                                    <option value="60">1h</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="boxes">
+                            <div class="nobox"></div>
+                            <div class="box">
+                                <h3>QUOTIDIEN</h3>
+                                <div id="impact_stream_quotidien" class="line24"></div>
+                            </div>
+                            <div class="doublebox">
+                                <h3>ANNUEL</h3>
+                                <div id="impact_stream_annuel" class="bold line24"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="plane" class="section">
+                        <div class="input_part">
+                            <h2>AVION (Déplacements pro.)</h2>
+                            <div class="question">Nombre de kilomètres parcourus en avion / an <br />
+                                (<a target="_blank" href="https://fr.distance.to">le calculer</a>)
+                            </div>
+                            <div class="answer">
+                                <input type="number" id="deplacement_plane" value="1000" min="0">
+                            </div>
+                        </div>
+                        <div class="boxes">
+                            <div class="nobox"></div>
+                            <div class="nobox"></div>
+                            <div class="doublebox">
+                                <h3>ANNUEL</h3>
+                                <div id="impact_plane_annuel" class="bold line24"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="work" class="section">
+                        <h2 class="h2_mobile">TRAJET TRAVAIL</h2>
+                        <p class="legend legend_mobile">Complétez la longueur de votre trajet en km puis précisez en pourcentage la répartition selon les différents modes de transport. (ex : Mon trajet fait 30km, je le fais 3 fois / semaine en vélo, 2 fois en voiture, ce qui fait : 60% vélo, 40% voiture)</p>
+                        <div class="goFlex">
+                            <div class="input_part">
+                                <h2>TRAJET TRAVAIL</h2>
+                                <p class="legend">Complétez la longueur de votre trajet en km puis précisez en pourcentage la répartition selon les différents modes de transport. (ex : Mon trajet fait 30km, je le fais 3 fois / semaine en vélo, 2 fois en voiture, ce qui fait : 60% vélo, 40% voiture)</p>
+                                <div class="question">Longueur de votre trajet <br />Travail - Domicile A/R (KM)</div>
+                                <div class="answer">
+                                    <input type="number" id="deplacement" min="0">&nbsp;&nbsp;Km
+                                </div>
+                                <div class="groupe">
+                                    <div class="qOne">
+                                        <div class="question">Part réalisée<br />en voiture (%)</div>
+                                        <div class="answer">
+                                            <input type="number" id="pourcent_voiture" class="percent" min="0" max="100">&nbsp;&nbsp;%
+                                        </div>
+                                    </div>
+                                    <div class="qTwo"></div>
+                                </div>
+                                <div class="groupe">
+                                    <div class="qOne">
+                                        <div class="question">Part réalisée<br />en transport en commun (%)</div>
+                                        <div class="answer">
+                                            <input type="number" id="pourcent_commun" class="percent" min="0" max="100">&nbsp;&nbsp;%
+                                        </div>
+                                    </div>
+                                    <div class="qTwo"></div>
+                                </div>
+                                <div class="groupe">
+                                    <div class="qOne">
+                                        <div class="question">Part réalisée<br />en vélo (%)</div>
+                                        <div class="answer">
+                                            <input type="number" id="pourcent_velo" class="percent" min="0" max="100">&nbsp;&nbsp;%
+                                        </div>
+                                    </div>
+                                    <div class="qTwo"></div>
+                                </div>
+                            </div>
+                            <div class="boxes">
+                                <div class="nobox"></div>
+                                <div class="box">
+                                    <h3>IMPACT D'UN A/R</h3>
+                                    <div class="line24" id="impact_voiture_quotidien"></div>
+                                    <div class="line24" id="impact_commun_quotidien"></div>
+                                    <div class="line24" id="impact_velo_quotidien"></div>
+                                </div>
+                                <div class="doublebox">
+                                    <h3>TOTAL ANNUEL</h3>
+                                    <div class="bold line24" id="impact_voiture_annuel"></div>
+                                    <div class="bold line24" id="impact_commun_annuel"></div>
+                                    <div class="bold line24" id="impact_velo_annnuel"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="footer">
+                        <div class="impact_total" id="first_row">
+                            <div class="div_subtotal">
+                                <h3>Mon impact numérique</h3>
+                                <div id="total_impact_numerique" class="subtotal"></div>KG eq CO2
+                            </div>
+                            <div class="div_subtotal">
+                                <h3>Mon impact déplacement</h3>
+                                <div id="total_impact_deplacement" class="subtotal"></div>KG eq CO2
+                            </div>
+                        </div>
+                        <div class="impact_total">
+                            <div class="div_subtotal div_total">
+                                <h3>Impact annuel</h3>
+                                <div id="total_impact" class="subtotal total"></div>KG eq CO2
+                            </div>
+                        </div>
+                        <div id="last_row">
+                            <div class="div_equiv">
+                                <div class="div_image">
+                                    <img src="img/tree.png" alt="icône représentant un arbre" />
+                                </div>
+                                <div class="impact_total">
+                                    <div class="div_subtotal div_equivtotal">
+                                        <h3>Nombre d'arbres pour compenser mon impact Co2</h3>
+                                        <span id="nb_arbres" class="subtotal"></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="div_equiv">
+                                <div class="div_image">
+                                    <img src="img/idea.png" alt="icône représentant une amoule allumée" />
+                                </div>
+                                <div class="impact_total">
+                                    <div class="div_subtotal div_equivtotal">
+                                        <h3>Une ampoule allumée<br />pendant</h3>
+                                        <span id="nb_bulb" class="subtotal"></span>
+                                        <span>an(s)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="div_equiv">
+                                <div class="div_image">
+                                    <img src="img/fleece.png" alt="icône d'une veste polaire" />
+                                </div>
+                                <div class="impact_total">
+                                    <div class="div_subtotal div_equivtotal">
+                                        <h3>Production de polaires Forclaz 50</h3>
+                                        <span id="nb_polaire" class="subtotal"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var acc=document.getElementsByClassName("collapsible");
+            var i;
+            for(i=0;i<acc.length;i++){
+                acc[i].addEventListener("click",function(){
+                    this.classList.toggle("active");
+                    var panel=this.previousElementSibling;
+                    if(panel.style.maxHeight){
+                        panel.style.maxHeight=null;
+                    }else{
+                        panel.style.maxHeight=panel.scrollHeight+"px";
+                    }
+                });
+            }
+            $(document).ready(function(){
+                $('.info').stop().mouseout(function(){
+                    $(this).parents('.question').next('.encart').hide('slow');
+                    return false;
+                });
+                $('.encart').stop().click(function(){
+                    $('.encart').hide('fast');return false;
+                });
+                $('.info').stop().mouseover(function(){
+                    $(this).parents('.question').next('.encart').show('fast');return false;
+                });
+            });
+        </script>
+    </body>
 </html>
