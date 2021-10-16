@@ -6,11 +6,9 @@
         <link rel="stylesheet" href="./src/css/style.css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
         <script src="./src/js/jquery.js"></script>
-        <!--<script src="./src/js/scripts.js"></script>-->
-        <script src="./src/js/main.js"></script>
+        <script src="./src/js/scripts.js"></script>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <!--
         <script type="text/javascript">
             var _paq = window._paq || [];
             _paq.push(['trackPageView']);
@@ -22,33 +20,33 @@
                 var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];g.type='text/javascript';
                 g.async=true; g.defer=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);})();
         </script>
-        -->
     </head>
     <body>
         <div id="page">
             <div id="content">
                 <div class="background-image"></div>
                 <div id="data">
-                    <div id="transport" class="section">
+                    <div id="device" class="section">
                         <div class="input_part">
                             <h2>TRANSPORT</h2>
                             <div class="groupe">
                                 <div class="qOne">
-                                    <div class="question">Moyen de transport</div>
+                                    <div class="question">Mon ordinateur portable (ou équivalent)</div>
                                     <div class="answer">
-                                        <select id="mode">
-                                            <option value="car">Voiture</option>
-                                            <option value="bike">Moto</option>
-                                        </select>
+                                        <select id="sel_laptop"></select>
                                     </div>
                                 </div>
                                 <div class="qTwo">
-                                    <div class="question">Nombre d'heures d'utilisation pour le travail (par mois)<br />
-                                        (<span>trajets entre domicile et travail et trajets entre travail et chez le client</span>)</div>
+                                    <div class="question">Durée d'utilisation (Années)</div>
                                     <div class="answer">
-                                        <div class="answer">
-                                            <input type="number" id="transport_hours" value="0" min="0">
-                                        </div>
+                                        <select id="sel_lastingLaptop">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3" selected=selected>3 - Défaut</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>

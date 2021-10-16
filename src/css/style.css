@@ -7,16 +7,14 @@ body{
     width:100%;
     background:#00659b
 }
-#head,#page{
+#page{
     margin:0 auto;width:95%
 }
 @media only screen and (min-width: 1100px){
     #page{width:90%}
-    #head{width:90%}
 }
 @media only screen and (min-width: 1200px){
     #page{width:80%}
-    #head{width:80%}
 }
 div{border:0 solid}
 h1{
@@ -41,22 +39,15 @@ h3{
 .clear{clear:both}
 .center{text-align:center}
 .img_flag{height:20px}
-#head{padding-top:5px;margin:0 auto;}
-header{background:#fff;padding:2% 0}
-#header_text{min-height:50px;z-index:100;padding-top:5px;margin:0 auto;color:#00659b;font-size:15px;line-height:1.6em}
 #content{width:100%;height:auto;z-index:100;margin:auto}
 #footer{margin:0 auto}
-#head_container{float:left;width:100%}
 #logo{width:250px}
 #logo img{max-width:100%}
 #title{float:left;width:100%;text-align:center;text-transform:uppercase;margin:20px 0}
 #data{position:relative;left:0;right:0;z-index:9999;margin:auto}.collapsible{display:none}
 @media only screen and (max-width: 998px){
     #logo,#flag{float:none;text-align:center;margin:0 auto;width:100%;margin:1.7% 0}
-    #head_container{float:none}#title{float:none;margin:20px auto 0 auto}
     #title h1{margin:0;text-align:center}#title h1 span{display:block}
-    #header_text{font-size:18px;padding-top:0}
-    #header_text p{margin-bottom:0}
     div.panel{max-height:0;overflow:hidden;transition:max-height 0.2s ease-out}
 }
 .section{width:100%;padding-top:10px;clear:both}
@@ -76,13 +67,16 @@ header{background:#fff;padding:2% 0}
     display:table-cell;
     vertical-align:bottom
 }
+.question span{
+    text-transform:lowercase;
+}
 .answer{color:#274374;margin:5px 0;padding:3px 0}
 .answer select,input:not([type=radio]),
 .collapsible{-webkit-appearance:none;-moz-appearance:none;appearance:none;border-radius:0;
     border:none;height:35px;background:#fff;width:90%;font-family:'Roboto Condensed';color:#274374;padding:1%}
 .collapsible{height:auto;width:100%;background:none;display:inline-block;transition:0.4s;cursor:pointer;
     outline:none;font-size:15px;width:100%;text-align:center;padding:0;margin:0;text-decoration:underline;color:#00659b}
-.answer select{background:url('img/drop-down.png') no-repeat center right #fff;background-size:15px 14px}
+.answer select{background:url('../../assets/drop-down.png') no-repeat center right #fff;background-size:15px 14px}
 #cloud select, #cloud input, #plane input{width:70%}
 .input_part{padding-left:20px;width:100%;font-size:16px}
 #sel_laptop{width:80%;margin-right:4px}
