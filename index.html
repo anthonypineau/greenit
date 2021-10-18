@@ -15,15 +15,20 @@
             <div id="content">
                 <div class="background-image"></div>
                 <div id="data">
+                    <div class="section">
+                        <div class="input_part">
+                            <p class="legend">Trajets entre domicile et travail et trajets entre travail et chez le client</p>
+                            <p class="legend">Veuillez choisi vos trois moyens de transport principaux (si vous en avez moins, laissez à 0)</p>
+                        </div>
+                    </div>
                     <div id="transport" class="section">
                         <div class="input_part">
                             <h2>TRANSPORT</h2>
-                            <p class="legend">Trajets entre domicile et travail et trajets entre travail et chez le client</p>
                             <div class="groupe">
                                 <div class="qOne">
                                     <div class="question">Moyen de transport</div>
                                     <div class="answer">
-                                        <select id="transportation">
+                                        <select id="transportation1" class="transportation">
                                             <option value="car">Voiture</option>
                                             <option value="bike">Deux roues thermique</option>
                                             <option value="plane">Avion</option>
@@ -35,30 +40,71 @@
                                     </div>
                                 </div>
                                 <div class="qTwo">
-                                    <div id="transportationQuestion" class="question">Nombre d'heures d'utilisation pour le travail (par semaine) </div>
+                                    <div class="question">Nombre de kilomètres parcourus pour le travail (par an)</div>
                                     <div class="answer">
-                                        <input type="number" id="transport_hours" value="0" min="0">
+                                        <input type="number" id="transport_hours1" class="transport_hours" value="0" min="0">
                                     </div>
                                 </div>
-                                <!-- à changer en fonction du moyen de transport ...
-                                    <div class="qTwo">
-                                        <div class="question faq">Nombre de kilomètres parcourus pour le travail (par an) <a class="info" onclick="return false" href="#">?</a></div>
-                                        <div class="encart">Trajets entre domicile et travail et trajets entre travail et chez le client</div>
-                                        <div class="answer">
-                                            <input type="number" id="transport_kilometers" value="0" min="0">
-                                        </div>
-                                    </div>
-                                -->
                             </div>
+                            <div class="groupe">
+                                <div class="qOne">
+                                    <div class="question">Moyen de transport</div>
+                                    <div class="answer">
+                                        <select id="transportation2" class="transportation">
+                                            <option value="car">Voiture</option>
+                                            <option value="bike">Deux roues thermique</option>
+                                            <option value="plane">Avion</option>
+                                            <option value="bus">Bus</option>
+                                            <option value="train">Train</option>
+                                            <option value="subway">Metro ou tram</option>
+                                            <option value="bicycle">Vélo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="qTwo">
+                                    <div class="question">Nombre de kilomètres parcourus pour le travail (par an)</div>
+                                    <div class="answer">
+                                        <input type="number" id="transport_hours2" class="transport_hours" value="0" min="0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="groupe">
+                                <div class="qOne">
+                                    <div class="question">Moyen de transport</div>
+                                    <div class="answer">
+                                        <select id="transportation3" class="transportation">
+                                            <option value="car">Voiture</option>
+                                            <option value="bike">Deux roues thermique</option>
+                                            <option value="plane">Avion</option>
+                                            <option value="bus">Bus</option>
+                                            <option value="train">Train</option>
+                                            <option value="subway">Metro ou tram</option>
+                                            <option value="bicycle">Vélo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="qTwo">
+                                    <div class="question">Nombre de kilomètres parcourus pour le travail (par an)</div>
+                                    <div class="answer">
+                                        <input type="number" id="transport_hours3" class="transport_hours" value="0" min="0">
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="legend">Total des moyens de transport</p>
+                            
                         </div>
                         <div class="boxes">
                             <div class="nobox"></div>
-                            <div class="doublebox">
+                            <div class="box">
                                 <h3>ANNUEL</h3>
-                                <div id="transport_total" class="line24">10</div>
+                                <div id="transport1" class="line24">0</div>
+                                <div id="transport2" class="line24">0</div>
+                                <div id="transport3" class="line24">0</div>
+                                <div id="transport_total" class="line24">0</div>
                             </div>
                         </div>
                     </div>
+                    
                     <div id="devices" class="section">
                         <div class="input_part">
                             <h2>ÉQUIMENTS NUMÉRIQUES</h2>
@@ -66,13 +112,13 @@
                                 <div class="qOne">
                                     <div class="question">Consommation moyenne en mode actif (Watts)</div>
                                     <div class="answer">
-                                        <input type="number" id="pa" value="0" min="0">
+                                        <input class="computer" type="number" id="pa" value="0" min="0">
                                     </div>
                                 </div>
                                 <div class="qTwo">
                                     <div class="question">Heure d'opération en mode actif (heures/semaine)</div>
                                     <div class="answer">
-                                        <input type="number" id="ha" value="0" min="0">
+                                        <input class="computer" type="number" id="ha" value="0" min="0">
                                     </div>
                                 </div>
                             </div>
@@ -80,13 +126,13 @@
                                 <div class="qOne">
                                     <div class="question">Consommation moyenne en mode veille (Watts)</div>
                                     <div class="answer">
-                                        <input type="number" id="pl" value="0" min="0">
+                                        <input class="computer" type="number" id="pl" value="0" min="0">
                                     </div>
                                 </div>
                                 <div class="qTwo">
                                     <div class="question">Heure d'opération en mode veille (heures/semaine)</div>
                                     <div class="answer">
-                                        <input type="number" id="hl" value="0" min="0">
+                                        <input class="computer" type="number" id="hl" value="0" min="0">
                                     </div>
                                 </div>
                             </div>
@@ -94,13 +140,13 @@
                                 <div class="qOne">
                                     <div class="question">Consommation moyenne en mode arrêt (Watts)</div>
                                     <div class="answer">
-                                        <input type="number" id="po" value="0" min="0">
+                                        <input class="computer" type="number" id="po" value="0" min="0">
                                     </div>
                                 </div>
                                 <div class="qTwo">
                                     <div class="question">Heure d'opération en mode arrêt (heures/semaine)</div>
                                     <div class="answer">
-                                        <input type="number" id="ho" value="0" min="0">
+                                        <input class="computer" type="number" id="ho" value="0" min="0">
                                     </div>
                                 </div>
                             </div>
@@ -135,16 +181,16 @@
                         </div>
                         <div class="boxes">
                             <div class="nobox"></div>
-                            <div class="doublebox">
+                            <div class="box">
                                 <h3>ANNUEL</h3>
                                 <div class="line24"></div>
                                 <div class="line24"></div>
                                 <div class="line24"></div>
-                                <div id="computer_impact_annuel" class="line24">10</div>
+                                <div id="computer_impact_annuel" class="line24">0</div>
                                 <div class="line24"></div>
-                                <div id="screen_total_annuel" class="line24">10</div>
-                                <div id="phone_total_annuel" class="line24">10</div>
-                                <div id="devices_total_annuel" class="bold line24">10</div>
+                                <div id="screen_total_annuel" class="line24">0</div>
+                                <div id="phone_total_annuel" class="line24">0</div>
+                                <div id="devices_total_annuel" class="bold line24">0</div>
                             </div>
                         </div>
                     </div>
@@ -169,13 +215,14 @@
                         </div>
                         <div class="boxes">
                             <div class="nobox"></div>
-                            <div class="doublebox">
+                            <div class="box">
                                 <h3>ANNUEL</h3>
                                 <div class="line24" id="storage_google_annuel">0</div>
                                 <div id="impact_email_annuel" class="line24">10</div>
                             </div>
                         </div>
                     </div>
+                    <div id="impression" class="section"></div>
                     <div id="footer">
                         <div class="impact_total" id="first_row">
                             <div class="div_subtotal">
