@@ -3,12 +3,25 @@
 //console.log(data);
 
 const selectsTransportation=document.querySelectorAll('.transportation');
+const transport_hours=document.querySelectorAll('.transport_hours');
+const transport1=document.querySelector('#transport1');
+const transport2=document.querySelector('#transport2');
+const transport3=document.querySelector('#transport3');
+const transportion1=document.querySelector('#transportion1');
+const transportion2=document.querySelector('#transportion2');
+const transportion3=document.querySelector('#transportion3');
+const transport_hours1=document.querySelector('#transport_hours1');
+const transport_hours2=document.querySelector('#transport_hours2');
+const transport_hours3=document.querySelector('#transport_hours3');
+const transport_total=document.querySelector('#transport_total');
+
+const inputsComputer=document.querySelectorAll("#devices input.computer");
+const computer_impact_annuel=document.querySelector('#computer_impact_annuel');
 
 fetch("../../data/data.json")
 .then(response => {
    return response.json();
-})
-.then(data => {
+}).then(data => {
     selectsTransportation.forEach(e => {
         data.forEach(d => {
             const option = document.createElement("option");
@@ -31,21 +44,6 @@ fetch("../../data/data.json")
         });
     });
 });
-
-const transport_hours=document.querySelectorAll('.transport_hours');
-const transport1=document.querySelector('#transport1');
-const transport2=document.querySelector('#transport2');
-const transport3=document.querySelector('#transport3');
-const transportion1=document.querySelector('#transportion1');
-const transportion2=document.querySelector('#transportion2');
-const transportion3=document.querySelector('#transportion3');
-const transport_hours1=document.querySelector('#transport_hours1');
-const transport_hours2=document.querySelector('#transport_hours2');
-const transport_hours3=document.querySelector('#transport_hours3');
-const transport_total=document.querySelector('#transport_total');
-
-const inputsComputer=document.querySelectorAll("#devices input.computer");
-const computer_impact_annuel=document.querySelector('#computer_impact_annuel');
 
 inputsComputer.forEach((e) => {
     e.addEventListener("change", () => {

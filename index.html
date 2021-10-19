@@ -13,127 +13,122 @@
     <body>
         <div id="page">
             <div id="content">
-                <div class="background-image"></div>
                 <div id="data">
-                    <div class="section">
-                        <div class="input_part">
-                            <p class="legend">Trajets entre domicile et travail et trajets entre travail et chez le client</p>
-                            <p class="legend">Veuillez choisir vos trois moyens de transport principaux (si vous en avez moins, laissez à 0)</p>
-                        </div>
-                    </div>
                     <div id="transport" class="section">
-                        <div class="input_part">
-                            <h2>TRANSPORT</h2>
-                            <div class="groupe">
-                                <div class="qOne">
-                                    <div class="question">Moyen de transport</div>
-                                    <div class="answer">
-                                        <select id="transportation1" class="transportation">
-                                            
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="qTwo">
-                                    <div class="question">Nombre de kilomètres parcourus pour le travail (par an)</div>
-                                    <div class="answer">
-                                        <input type="number" id="transport_hours1" class="transport_hours" value="0" min="0">
-                                    </div>
+                        <h2>TRANSPORT</h2>
+                        <div class="grid-container">
+                            <div class="grid-item">
+                                <p class="legend">Trajets entre domicile et travail et trajets entre travail et chez le client</p>
+                            </div>
+                            <div class="grid-item">
+                                <p class="legend">Veuillez choisir vos trois moyens de transport principaux (si vous en avez moins, laissez à 0)</p>
+                            </div>
+                            <div class="grid-item"></div>
+                            <div class="grid-item">
+                                <div class="question">Moyen de transport</div>
+                                <div class="answer">
+                                    <select id="transportation1" class="transportation">
+                                        
+                                    </select>
                                 </div>
                             </div>
-                            <div class="groupe">
-                                <div class="qOne">
-                                    <div class="question">Moyen de transport</div>
-                                    <div class="answer">
-                                        <select id="transportation2" class="transportation">
-                                            
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="qTwo">
-                                    <div class="question">Nombre de kilomètres parcourus pour le travail (par an)</div>
-                                    <div class="answer">
-                                        <input type="number" id="transport_hours2" class="transport_hours" value="0" min="0">
-                                    </div>
+                            <div class="grid-item">
+                                <div class="question">Nombre de kilomètres parcourus pour le travail (par an)</div>
+                                <div class="answer">
+                                    <input type="number" id="transport_hours1" class="transport_hours" value="0" min="0">
                                 </div>
                             </div>
-                            <div class="groupe">
-                                <div class="qOne">
-                                    <div class="question">Moyen de transport</div>
-                                    <div class="answer">
-                                        <select id="transportation3" class="transportation">
-                                            
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="qTwo">
-                                    <div class="question">Nombre de kilomètres parcourus pour le travail (par an)</div>
-                                    <div class="answer">
-                                        <input type="number" id="transport_hours3" class="transport_hours" value="0" min="0">
-                                    </div>
+                            <div class="grid-item center">
+                                <div id="transport1">0</div>
+                            </div>
+                            <div class="grid-item">
+                                <div class="question">Moyen de transport</div>
+                                <div class="answer">
+                                    <select id="transportation2" class="transportation">
+                                        
+                                    </select>
                                 </div>
                             </div>
-                            <p class="legend">Total des moyens de transport</p>
-                            
-                        </div>
-                        <div class="boxes">
-                            <div class="nobox"></div>
-                            <div class="box">
-                                <h3>ANNUEL</h3>
-                                <div id="transport1" class="line24">0</div>
-                                <div id="transport2" class="line24">0</div>
-                                <div id="transport3" class="line24">0</div>
-                                <div id="transport_total" class="line24">0</div>
+                            <div class="grid-item">
+                                <div class="question">Nombre de kilomètres parcourus pour le travail (par an)</div>
+                                <div class="answer">
+                                    <input type="number" id="transport_hours2" class="transport_hours" value="0" min="0">
+                                </div>
+                            </div>
+                            <div class="grid-item center">
+                                <div id="transport2">0</div>
+                            </div>
+                            <div class="grid-item">
+                                <div class="question">Moyen de transport</div>
+                                <div class="answer">
+                                    <select id="transportation3" class="transportation">
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="grid-item">
+                                <div class="question">Nombre de kilomètres parcourus pour le travail (par an)</div>
+                                <div class="answer">
+                                    <input type="number" id="transport_hours3" class="transport_hours" value="0" min="0">
+                                </div>
+                            </div>
+                            <div class="grid-item center">
+                                <div id="transport3">0</div>
+                            </div>
+                            <div class="grid-item">
+                                <p class="legend">Total des moyens de transport</p>
+                            </div>
+                            <div class="grid-item center">
+                                <div id="transport_total">0</div>
                             </div>
                         </div>
                     </div>
-                    
                     <div id="devices" class="section">
-                        <div class="input_part">
-                            <h2>ÉQUIMENTS NUMÉRIQUES</h2>
-                            <div class="groupe">
-                                <div class="qOne">
-                                    <div class="question">Consommation moyenne en mode actif (Watts)</div>
-                                    <div class="answer">
-                                        <input class="computer" type="number" id="pa" value="0" min="0">
-                                    </div>
-                                </div>
-                                <div class="qTwo">
-                                    <div class="question">Heure d'opération en mode actif (heures/semaine)</div>
-                                    <div class="answer">
-                                        <input class="computer" type="number" id="ha" value="0" min="0">
-                                    </div>
+                        <h2>ÉQUIMENTS NUMÉRIQUES</h2>
+                        <div class="grid-container">
+                            <div class="grid-item">
+                                <div class="question">Consommation moyenne en mode actif (Watts)</div>
+                                <div class="answer">
+                                    <input class="computer" type="number" id="pa" value="0" min="0">
                                 </div>
                             </div>
-                            <div class="groupe">
-                                <div class="qOne">
-                                    <div class="question">Consommation moyenne en mode veille (Watts)</div>
-                                    <div class="answer">
-                                        <input class="computer" type="number" id="pl" value="0" min="0">
-                                    </div>
-                                </div>
-                                <div class="qTwo">
-                                    <div class="question">Heure d'opération en mode veille (heures/semaine)</div>
-                                    <div class="answer">
-                                        <input class="computer" type="number" id="hl" value="0" min="0">
-                                    </div>
+                            <div class="grid-item">
+                                <div class="question">Heure d'opération en mode actif (heures/semaine)</div>
+                                <div class="answer">
+                                    <input class="computer" type="number" id="ha" value="0" min="0">
                                 </div>
                             </div>
-                            <div class="groupe">
-                                <div class="qOne">
-                                    <div class="question">Consommation moyenne en mode arrêt (Watts)</div>
-                                    <div class="answer">
-                                        <input class="computer" type="number" id="po" value="0" min="0">
-                                    </div>
-                                </div>
-                                <div class="qTwo">
-                                    <div class="question">Heure d'opération en mode arrêt (heures/semaine)</div>
-                                    <div class="answer">
-                                        <input class="computer" type="number" id="ho" value="0" min="0">
-                                    </div>
+                            <div class="grid-item">
+                                <div class="question">Consommation moyenne en mode veille (Watts)</div>
+                                <div class="answer">
+                                    <input class="computer" type="number" id="pl" value="0" min="0">
                                 </div>
                             </div>
-                            <p class="legend">Consommation de l'ordinateur</p>
-                            <div class="qOne">
+                            <div class="grid-item">
+                                <div class="question">Heure d'opération en mode veille (heures/semaine)</div>
+                                <div class="answer">
+                                    <input class="computer" type="number" id="hl" value="0" min="0">
+                                </div>
+                            </div>
+                            <div class="grid-item">
+                                <div class="question">Consommation moyenne en mode arrêt (Watts)</div>
+                                <div class="answer">
+                                    <input class="computer" type="number" id="po" value="0" min="0">
+                                </div>
+                            </div>
+                            <div class="grid-item">
+                                <div class="question">Heure d'opération en mode arrêt (heures/semaine)</div>
+                                <div class="answer">
+                                    <input class="computer" type="number" id="ho" value="0" min="0">
+                                </div>
+                            </div>
+                            <div class="grid-item">
+                                <p class="legend">Consommation de l'ordinateur</p>
+                            </div>
+                            <div class="grid-item center">
+                                <div id="computer_impact_annuel">0</div>
+                            </div>
+                            <div class="grid-item">
                                 <div class="question">Nombre d'écrans</div>
                                 <div class="answer">
                                     <select id="screen">
@@ -144,63 +139,67 @@
                                     </select>
                                 </div>
                             </div>
-                            <p class="legend">Consommation de l'écran (des écrans)</p>
-                            <div class="qTwo" id="smartphone">
-                                <div class="question">Ai-je un smartphone ?</div>
-                                <div class="answer">
-                                    <div class="toggle-radio">
-                                        <input type="radio" value="yes" name="phone" id="yes" checked>
-                                        <input type="radio" value="no" name="phone" id="no">
-                                        <div class="switch">
-                                            <label for="yes">Oui</label>
-                                            <label for="no">Non</label>
-                                            <span></span>
+                            <div class="grid-item">
+
+                            </div>
+                            <div class="grid-item">
+                                <p class="legend">Consommation de l'écran (des écrans)</p>
+                            </div>
+                            <div class="grid-item center">
+                                <div id="screen_total_annuel">0</div>
+                            </div>
+                            <div class="grid-item">
+                                <div id="smartphone">
+                                    <div class="question">Ai-je un smartphone ?</div>
+                                    <div class="answer">
+                                        <div class="toggle-radio">
+                                            <input type="radio" value="yes" name="phone" id="yes" checked>
+                                            <input type="radio" value="no" name="phone" id="no">
+                                            <div class="switch">
+                                                <label for="yes">Oui</label>
+                                                <label for="no">Non</label>
+                                                <span></span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <p class="legend">Consommation totale des équipements</p>
-                        </div>
-                        <div class="boxes">
-                            <div class="nobox"></div>
-                            <div class="box">
-                                <h3>ANNUEL</h3>
-                                <div class="line24"></div>
-                                <div class="line24"></div>
-                                <div class="line24"></div>
-                                <div id="computer_impact_annuel" class="line24">0</div>
-                                <div class="line24"></div>
-                                <div id="screen_total_annuel" class="line24">0</div>
-                                <div id="phone_total_annuel" class="line24">0</div>
-                                <div id="devices_total_annuel" class="bold line24">0</div>
+                            <div class="grid-item center">
+                                <div id="phone_total_annuel">0</div>
+                            </div>
+                            <div class="grid-item">
+                                <p class="legend">Consommation totale des équipements</p>
+                            </div>
+                            <div class="grid-item center">
+                                <div id="devices_total_annuel">0</div>
                             </div>
                         </div>
                     </div>
                     <div id="cloud" class="section">
-                        <div class="input_part">
-                            <h2>CLOUD</h2>
-                            <div class="question faq">Mon stockage Cloud en Go <a class="info" onclick="return false" href="#">?</a></div>
-                            <div class="encart">Empreinte basée sur une étude Green IT - Frédéric Bordage : 120g Co2/Go stocké</div>
-                            <div class="answer">
-                                <input type="number" id="storage_google" min="0">
+                        <h2>CLOUD</h2>
+                        <div class="grid-container">
+                            <div class="grid-item">
+                                <div class="question">Mon stockage Cloud en Go</div><!-- 120g Co2/Go stocké -->
+                                <div class="answer">
+                                    <input type="number" id="storage_google" min="0">
+                                </div>
                             </div>
-                            <div class="question faq">Nombre d'emails envoyés<br />par jour <a class="info" onclick="return false" href="#">?</a></div>
-                            <div class="encart">NB : Ces résultats sont basés sur une étude de l'ADEME datant de 2011, intitulée <em>Analyse comparée des impacts environnementaux de la communication par voie électronique</em>, seule étude réalisée sur cet indicateur, s'appuyant sur un scénario où chaque email envoyé pèserait 1Mo. Au regard des différentes études, on peut estimer que la taille moyenne d'un email composé uniquement de texte est au moins 10 fois moins élevée.</div>
-                            <div class="answer">
-                                <select id="sel_emails">
-                                    <option value="1">1 -> 10</option>
-                                    <option value="11">11 -> 20</option>
-                                    <option value="21">21 -> 40</option>
-                                    <option value="41">+ 40</option>
-                                </select>
+                            <div class="grid-item center">
+                                <div id="storage_google_annuel">0</div>
                             </div>
-                        </div>
-                        <div class="boxes">
-                            <div class="nobox"></div>
-                            <div class="box">
-                                <h3>ANNUEL</h3>
-                                <div class="line24" id="storage_google_annuel">0</div>
-                                <div id="impact_email_annuel" class="line24">10</div>
+                            <div class="grid-item">
+                                <div class="question ">Nombre d'emails envoyés par jour</div>
+                                <div class="answer">
+                                    <select id="sel_emails">
+                                        <option value="1">1 -> 10</option>
+                                        <option value="11">11 -> 20</option>
+                                        <option value="21">21 -> 40</option>
+                                        <option value="41">+ 40</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="grid-item center">
+                                <div id="impact_email_annuel">10</div>
                             </div>
                         </div>
                     </div>
@@ -268,20 +267,6 @@
                 </div>
             </div>
         </div>
-        <script>
-            $(document).ready(function(){
-                $('.info').stop().mouseout(function(){
-                    $(this).parents('.question').next('.encart').hide('slow');
-                    return false;
-                });
-                $('.encart').stop().click(function(){
-                    $('.encart').hide('fast');return false;
-                });
-                $('.info').stop().mouseover(function(){
-                    $(this).parents('.question').next('.encart').show('fast');return false;
-                });
-            });
-        </script>
         <script src="./src/js/main.js"></script>
     </body>
 </html>
