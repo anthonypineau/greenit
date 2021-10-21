@@ -5,8 +5,6 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <link rel="stylesheet" href="./src/css/style.css" />
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-        <script src="./src/js/jquery.js"></script>
-        <!--<script src="./src/js/scripts.js"></script>-->
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     </head>
@@ -38,8 +36,8 @@
                                     <input type="number" id="transport_hours1" class="transport_hours" value="0" min="0">
                                 </div>
                             </div>
-                            <div class="grid-item center">
-                                <div id="transport1">0</div>
+                            <div id="transport1" class="grid-item center">
+                                0
                             </div>
                             <div class="grid-item">
                                 <div class="question">Moyen de transport</div>
@@ -55,8 +53,8 @@
                                     <input type="number" id="transport_hours2" class="transport_hours" value="0" min="0">
                                 </div>
                             </div>
-                            <div class="grid-item center">
-                                <div id="transport2">0</div>
+                            <div id="transport2" class="grid-item center">
+                                0
                             </div>
                             <div class="grid-item">
                                 <div class="question">Moyen de transport</div>
@@ -72,14 +70,14 @@
                                     <input type="number" id="transport_hours3" class="transport_hours" value="0" min="0">
                                 </div>
                             </div>
-                            <div class="grid-item center">
-                                <div id="transport3">0</div>
+                            <div id="transport3" class="grid-item center">
+                                0
                             </div>
                             <div class="grid-item">
                                 <p class="legend">Total des moyens de transport</p>
                             </div>
-                            <div class="grid-item center">
-                                <div id="transport_total">0</div>
+                            <div id="transport_total"class="grid-item center">
+                                0
                             </div>
                         </div>
                     </div>
@@ -133,9 +131,9 @@
                                 <div class="answer">
                                     <select id="screen">
                                         <option value="0">0</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
+                                        <option value="154">1</option>
+                                        <option value="308">2</option>
+                                        <option value="463">3</option>
                                     </select>
                                 </div>
                             </div>
@@ -165,13 +163,13 @@
                                 </div>
                             </div>
                             <div class="grid-item center">
-                                <div id="phone_total_annuel">0</div>
+                                <div id="phone_total_annuel">15</div>
                             </div>
                             <div class="grid-item">
                                 <p class="legend">Consommation totale des équipements</p>
                             </div>
                             <div class="grid-item center">
-                                <div id="devices_total_annuel">0</div>
+                                <div id="devices_total_annuel">15</div>
                             </div>
                         </div>
                     </div>
@@ -181,25 +179,25 @@
                             <div class="grid-item">
                                 <div class="question">Mon stockage Cloud en Go</div><!-- 120g Co2/Go stocké -->
                                 <div class="answer">
-                                    <input type="number" id="storage_google" min="0">
+                                    <input type="number" id="cloud_storage" min="0">
                                 </div>
                             </div>
                             <div class="grid-item center">
-                                <div id="storage_google_annuel">0</div>
+                                <div id="cloud_storage_value">0</div>
                             </div>
                             <div class="grid-item">
                                 <div class="question ">Nombre d'emails envoyés par jour</div>
                                 <div class="answer">
                                     <select id="sel_emails">
-                                        <option value="1">1 -> 10</option>
-                                        <option value="11">11 -> 20</option>
-                                        <option value="21">21 -> 40</option>
-                                        <option value="41">+ 40</option>
+                                        <option value="32">1 -> 10</option>
+                                        <option value="64">11 -> 20</option>
+                                        <option value="129">21 -> 40</option>
+                                        <option value="226">+ 40</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="grid-item center">
-                                <div id="impact_email_annuel">10</div>
+                                <div id="impact_email_annuel">32</div>
                             </div>
                         </div>
                     </div>
@@ -208,17 +206,17 @@
                         <div class="impact_total" id="first_row">
                             <div class="div_subtotal">
                                 <h3>Mon impact numérique</h3>
-                                <div id="total_impact_numerique" class="subtotal"></div>KG eq CO2
+                                <div id="total_impact_numerique" class="subtotal">0</div>KG eq CO2
                             </div>
                             <div class="div_subtotal">
                                 <h3>Mon impact déplacement</h3>
-                                <div id="total_impact_deplacement" class="subtotal"></div>KG eq CO2
+                                <div id="total_impact_deplacement" class="subtotal">0</div>KG eq CO2
                             </div>
                         </div>
                         <div class="impact_total">
                             <div class="div_subtotal div_total">
                                 <h3>Impact annuel</h3>
-                                <div id="total_impact" class="subtotal total"></div>KG eq CO2
+                                <div id="total_impact" class="subtotal total">0</div>KG eq CO2
                             </div>
                         </div>
                         <div id="last_row">
@@ -231,7 +229,7 @@
                                 <div class="impact_total">
                                     <div class="div_subtotal div_equivtotal">
                                         <h3>Nombre d'arbres pour compenser mon impact Co2</h3>
-                                        <span id="nb_arbres" class="subtotal"></span>
+                                        <span id="nb_arbres" class="subtotal">0</span>
                                     </div>
                                 </div>
                             </div>
@@ -244,7 +242,7 @@
                                 <div class="impact_total">
                                     <div class="div_subtotal div_equivtotal">
                                         <h3>Une ampoule allumée<br />pendant</h3>
-                                        <span id="nb_bulb" class="subtotal"></span>
+                                        <span id="nb_bulb" class="subtotal">0</span>
                                         <span>an(s)</span>
                                     </div>
                                 </div>
@@ -258,7 +256,7 @@
                                 <div class="impact_total">
                                     <div class="div_subtotal div_equivtotal">
                                         <h3>Production de polaires Forclaz 50</h3>
-                                        <span id="nb_polaire" class="subtotal"></span>
+                                        <span id="nb_polaire" class="subtotal">0</span>
                                     </div>
                                 </div>
                             </div>

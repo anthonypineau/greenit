@@ -1,7 +1,3 @@
-//const dataFile = require("../../data/data.json");
-//const data= JSON.parse(dataFile);
-//console.log(data);
-
 const selectsTransportation=document.querySelectorAll('.transportation');
 const transport_hours=document.querySelectorAll('.transport_hours');
 const transport1=document.querySelector('#transport1');
@@ -17,6 +13,43 @@ const transport_total=document.querySelector('#transport_total');
 
 const inputsComputer=document.querySelectorAll("#devices input.computer");
 const computer_impact_annuel=document.querySelector('#computer_impact_annuel');
+
+const screen_total_annuel=document.querySelector('#screen_total_annuel');
+const screen=document.querySelector('#screen');
+
+const yesRadio = document.querySelector('#yes');
+const noRadio = document.querySelector('#no');
+const phone_total_annuel = document.querySelector('#phone_total_annuel');
+
+const cloud_storage=document.querySelector('#cloud_storage');
+const cloud_storage_value=document.querySelector('#cloud_storage_value');
+const sel_emails=document.querySelector('#sel_emails');
+const impact_email_annuel=document.querySelector('#impact_email_annuel');
+
+screen.addEventListener("change", () => {
+    screen_total_annuel.textContent=screen.value;
+});
+
+yesRadio.addEventListener("change", () => {
+    if(yesRadio.checked){
+        phone_total_annuel.textContent=15;
+    }
+});
+
+noRadio.addEventListener("change", () => {
+    if(noRadio.checked){
+        phone_total_annuel.textContent=0;
+    }
+});
+
+cloud_storage.addEventListener("change", () => {
+    cloud_storage_value.textContent=120*cloud_storage.value;
+});
+
+sel_emails.addEventListener("change", () => {
+    impact_email_annuel.textContent=sel_emails.value;
+});
+
 
 fetch("../../data/data.json")
 .then(response => {
