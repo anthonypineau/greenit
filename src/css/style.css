@@ -3,181 +3,161 @@
 }
 body{
     font-family:'Roboto Condensed',sans-serif;
-    margin:0 auto;
-    width:100%;
-    background:#666;
-    color: #fff;
+    background-color: #fefae0;
+    color: #606c38;
+    font-size: 16px;
 }
-
-.grid-container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    padding: 10px;
-}
-
-.grid-item {
+header {
+    padding: 2% 0;
     display: flex;
-    flex-direction: column;
-    margin: 20px;
-    
-}
-
-.grid-item.center {
-    justify-content: center;
     align-items: center;
-}
-
-#devices .grid-container, #cloud .grid-container{
-    display: grid;
-    grid-template-columns: auto auto;
-    padding: 10px;
-}
-
-#page{
-    margin:0 auto;
-    width:95%
-}
-@media only screen and (min-width: 1100px){
-    #page{width:90%}
-}
-@media only screen and (min-width: 1200px){
-    #page{width:80%}
-}
-#content{width:100%;height:auto;z-index:100;margin:auto}
-#data{
-    position:relative;
-    left:0;
-    right:0;
-    z-index:9999;
-    margin:auto;
-}
-div{
-    border:0 solid;
+    justify-content: center
 }
 h1{
     font-size:30px;
-    color:#00659b;
+    color:#606c38;
     margin:5px 0 5px 0
 }
 h2{
     font-size:20px;
     font-weight:700;
-    color:#fff
+    color:#606c38;
+    text-align: center;
 }
 h3{
     font-size:18px;
     font-weight:700;
     font-style:italic
 }
-.bold{
-    font-weight:700;
-    color:#FDD827;
+
+.bold {
+    font-size: 20px;
+    font-weight: 900;
 }
 
-#footer{margin:0 auto}
-
-.section{
-    margin: 10px 0;
-}
-.boxes{width:100%}
-.box{float:left;width:23%;margin-bottom:20px;margin-right:2%;background-color:#4BD1B9;text-align:center;color:#fff;height:100%}
-.nobox{float:left;min-height:130px;width:23%;margin-bottom:20px;margin-right:2%;text-align:center}
-.question{
-    width:100%;
-    height:30px;
-    color:#fff;
-    font-size:13px;
-    text-transform:uppercase;
-    margin:5px 0;
-    padding:3px 0;
-    display:table-cell;
-    vertical-align:bottom
+.gridContainer {
+    display: grid;
+    grid-template-columns: 35% 35%;
+    padding: 20px;
+    column-gap: 15%;
+    row-gap: 10px;
+    justify-content: center;
+    align-content: center;
 }
 
-@media screen and (max-width: 680px){
-    .question{
-        height: 50px;
+.gridItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    height: 50px;
+}
+
+.center{
+    justify-content: center;
+}
+
+@media screen and (max-width: 680px) {
+    .gridContainer{
+        grid-template-columns: none;
+        grid-template-rows: auto auto;
+    }
+
+    .gridItem{
+        flex-direction: column;
+    }
+
+    select, input, .legend {
+        min-height: 70px;
     }
 }
 
-.answer{color:#274374;margin:5px 0;padding:3px 0}
-.answer select,input:not([type=radio]){-webkit-appearance:none;-moz-appearance:none;appearance:none;border-radius:0;
-    border:none;height:35px;background:#fff;width:90%;font-family:'Roboto Condensed';color:#274374;padding:1%}
-.answer select{background:url('../../assets/drop-down.png') no-repeat center right #fff;background-size:15px 14px}
-.input_part{padding-left:20px;width:100%;font-size:16px}
-@media only screen and (min-width: 998px){
-    .input_part{width:49%}
-    .boxes{width:51%}
-    .question{padding-right:19%}
-    .groupe{padding:0% 0}
-    .qOne,.qTwo{width:50%}
-    .box h3{margin-bottom:67px}
-    .line24{height:82px}
-    .line78{height:0px}
-    .box div.line24:last-child{height:20px}
-}
-@media only screen and (max-width: 998px){
-    .boxes{display:flex;justify-content:space-between;align-items:stretch}
-    .box{float:none;height:150px}
-    .line24{height:29px}
-    .line78{height:0px}
-    .box div.line24:last-child{height:20px}
-}
-
-#smartphone{position:relative;padding-top:20px}
-#smartphone .question{width:150px;padding-right:0}
-.switch{position:absolute;margin-left:150px;top:15px;width:150px;height:50px;text-align:center;background:#333;transition:all 0.2s ease}
-.switch span{position:absolute;width:20px;height:4px;top:50%;left:50%;margin:-2px 0px 0px -4px;
-    background:#fff;display:block;transform:rotate(-45deg);transition:all 0.2s ease
-}
-.switch span:after{content:"";display:block;position:absolute;width:4px;height:12px;margin-top:-8px;background:#fff;transition:all 0.2s ease}
-input[type=radio]{display:none}
-.switch label{cursor:pointer;color:rgba(0,0,0,0.2);width:60px;line-height:50px;transition:all 0.2s ease}
-label[for=yes]{position:absolute;left:0px;height:20px}
-label[for=no]{position:absolute;right:0px}
-#no:checked~.switch{background:#eb4f37}
-#no:checked ~ .switch span{background:#fff;margin-left:-8px}
-#no:checked ~ .switch span:after{background:#fff;height:20px;margin-top:-8px;margin-left:8px}
-#yes:checked ~ .switch label[for=yes]{color:#fff}
-#no:checked ~ .switch label[for=no]{color:#fff}
-#no ~ .switch label[for=no]{color:#666}
-.legend{
-    font-style:italic;
+select,input, .legend {
+    border:none;
+    min-height:50px;
+    min-width: 200px;
+    background:#bc6c25;
     color:#fff;
-    font-size:0.9rem;
-    border-left:3px solid #fff;
-    padding:12px 27px;
-    background:#333;
-    line-height:1.2rem
+    padding: 1% 20px;
+    border-radius: 30px;
 }
 
-/* footer */
-.div_subtotal{padding:1% 0 2% 0;font-weight:700;text-align:center;background-color:#fff}
-.subtotal{font-size:50px;font-weight:700}
-.subtotal h3{font-size:40px;padding-bottom:5px}
-.total{color:red}
-.div_total{width:50%;margin:0 auto}
-.div_equiv{width:33%;font-weight:700;text-align:center}
-.div_equivtotal{width:80%;margin:0 auto;height:150px}
-.tableauImpact{font-size:18px;font-weight:600;color:#fff;width:100%;text-align:center;margin:auto;padding-top:5px}
-.ges2,.ges4{display:inline-block;border-radius:10px;font-weight:600;margin:0 6px;color:#fff;
-    background-color:#4BD1B9;padding:10px 15px;text-align:center
+/* footer faire du blanc sur orange avec des borders radius */
+#footer {
+    margin-top: 30px;
 }
+
+.divSubTotal{
+    padding:1% 0 2% 0;
+    font-weight:700;
+    text-align:center;
+    background-color:#bc6c25
+}
+.subtotal{
+    font-size:50px;
+    font-weight:700
+}
+.subtotal h3{
+    font-size:40px;
+    padding-bottom:5px
+}
+.total{
+    color:red
+}
+.div_total{
+    width:50%;
+    margin:0 auto
+}
+.divEquiv{
+    width:33%;
+    font-weight:700;
+    text-align:center
+}
+.divEquivTotal{
+    width:80%;
+    margin:0 auto;
+    height:150px;
+    padding: 20px 0;
+}
+
 @media only screen and (max-width: 998px){
-    .bg-total_post,.bg-total_pre,.bg-total_last{display:none}
-    .div_subtotal{width:80%;margin:1% auto;padding:2% 0 4% 0;height:auto}
-    #last_row .impact_total .div_subtotal{width:100%}
-    #last_row .impact_total{margin:6px auto 0px auto;padding:2% 2% 0% 2%;height:auto}
+    .divSubTotal{
+        width:80%;
+        margin:1% auto;
+        padding:2% 0 4% 0;
+        height:auto
+    }
+    #lastRow .impactTotal .divSubTotal{width:100%}
+    #lastRow .impactTotal{
+        margin:6px auto 0px auto;
+        padding:2% 2% 0% 2%;
+        height:auto}
     .subtotal{font-size:31px}
-    #last_row .div_subtotal{padding:1% 2% 12% 2%}
-    #last_row h3{height:100px}
-    .div_subtotal h3{font-size:17px}
+    #lastRow .divSubTotal{padding:1% 2% 12% 2%}
+    #lastRow h3{height:100px}
+    .divSubTotal h3{font-size:17px}
 }
-.impact_total{margin:30px auto}
-#last_row,#first_row{width:100%;height:auto;display:flex;justify-content:space-between;align-items:stretch}
-#last_row .div_equiv{width:33%;height:100%}
-#first_row{justify-content:center;align-items:stretch}
-#first_row .div_subtotal{height:100%;padding:1% 2% 2% 2%;margin:0 0 0 1%}
-#first_row .div_subtotal:first-child{margin:0 1% 0 0}
-.div_subtotal{color:#00659b}
-.div_subtotal h3{font-style:normal;text-transform:uppercase;font-weight:bold}
+.impactTotal{margin:30px auto}
+#lastRow,#firstRow{
+    width:100%;
+    height:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:stretch}
+#lastRow .divEquiv{width:33%;height:100%}
+#firstRow{justify-content:center;align-items:stretch}
+#firstRow .divSubTotal{height:100%;padding:1% 2% 2% 2%;margin:0 0 0 1%}
+#firstRow .divSubTotal:first-child{margin:0 1% 0 0}
+.divSubTotal{color:#fff}
+.divSubTotal h3{font-style:normal;text-transform:uppercase;font-weight:bold}
+
+footer{
+    height: 30px;
+    position:static;
+    clear: both;
+    width: 100%;
+    bottom: 0;
+    padding-bottom: 10px;
+    text-align: center;
+  }

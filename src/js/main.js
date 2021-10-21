@@ -1,53 +1,56 @@
 const selectsTransportation=document.querySelectorAll('.transportation');
-const transport_hours=document.querySelectorAll('.transport_hours');
+const transportHours=document.querySelectorAll('.transportHours');
 const transport1=document.querySelector('#transport1');
 const transport2=document.querySelector('#transport2');
 const transport3=document.querySelector('#transport3');
 const transportion1=document.querySelector('#transportion1');
 const transportion2=document.querySelector('#transportion2');
 const transportion3=document.querySelector('#transportion3');
-const transport_hours1=document.querySelector('#transport_hours1');
-const transport_hours2=document.querySelector('#transport_hours2');
-const transport_hours3=document.querySelector('#transport_hours3');
-const transport_total=document.querySelector('#transport_total');
+const transportHours1=document.querySelector('#transportHours1');
+const transportHours2=document.querySelector('#transportHours2');
+const transportHours3=document.querySelector('#transportHours3');
+const transportTotal=document.querySelector('#transportTotal');
 
-const inputsComputer=document.querySelectorAll("#devices input.computer");
-const computer_impact_annuel=document.querySelector('#computer_impact_annuel');
+const inputsComputer=document.querySelectorAll("input.computer");
+const computerTotal=document.querySelector('#computerTotal');
 
-const screen_total_annuel=document.querySelector('#screen_total_annuel');
+const screenTotal=document.querySelector('#screenTotal');
 const screen=document.querySelector('#screen');
 
-const yesRadio = document.querySelector('#yes');
-const noRadio = document.querySelector('#no');
-const phone_total_annuel = document.querySelector('#phone_total_annuel');
+const phone = document.querySelector('#phone');
+const phoneValue = document.querySelector('#phoneValue');
 
-const cloud_storage=document.querySelector('#cloud_storage');
-const cloud_storage_value=document.querySelector('#cloud_storage_value');
-const sel_emails=document.querySelector('#sel_emails');
-const impact_email_annuel=document.querySelector('#impact_email_annuel');
+const cloud=document.querySelector('#cloud');
+const cloudValue=document.querySelector('#cloudValue');
+const emails=document.querySelector('#emails');
+const emailTotal=document.querySelector('#emailTotal');
+const paper=document.querySelector('#paper');
+const paperValue=document.querySelector('#paperValue');
+
 
 screen.addEventListener("change", () => {
-    screen_total_annuel.textContent=screen.value;
+    screenTotal.textContent=screen.value;
+    calculateDevices();
 });
 
-yesRadio.addEventListener("change", () => {
-    if(yesRadio.checked){
-        phone_total_annuel.textContent=15;
-    }
+phone.addEventListener("change", () => {
+    phoneValue.textContent=phone.value;
+    calculateDevices();
 });
 
-noRadio.addEventListener("change", () => {
-    if(noRadio.checked){
-        phone_total_annuel.textContent=0;
-    }
+cloud.addEventListener("change", () => {
+    cloudValue.textContent=120*cloud.value/1000;
+    calculateCloud();
 });
 
-cloud_storage.addEventListener("change", () => {
-    cloud_storage_value.textContent=120*cloud_storage.value;
+emails.addEventListener("change", () => {
+    emailTotal.textContent=emails.value;
+    calculateCloud();
 });
 
-sel_emails.addEventListener("change", () => {
-    impact_email_annuel.textContent=sel_emails.value;
+paper.addEventListener("change", () => {
+    paperValue.textContent=paper.value*5/1000;
+    calculateCloud();
 });
 
 
@@ -65,13 +68,13 @@ fetch("../../data/data.json")
         e.addEventListener("change", () => {
             switch(e.id){
                 case "transportation1":
-                    calculateTranport(transportation1, transport1, transport_hours1);
+                    calculateTranport(transportation1, transport1, transportHours1);
                     break;
                 case "transportation2":
-                    calculateTranport(transportation2, transport2, transport_hours2);
+                    calculateTranport(transportation2, transport2, transportHours2);
                     break;
                 case "transportation3":
-                    calculateTranport(transportation3, transport3, transport_hours3);
+                    calculateTranport(transportation3, transport3, transportHours3);
                     break;
             }
         });
@@ -84,17 +87,17 @@ inputsComputer.forEach((e) => {
     });
 });
 
-transport_hours.forEach((e) => {
+transportHours.forEach((e) => {
     e.addEventListener("change", () => {
         switch(e.id){
-            case "transport_hours1":
-                calculateTranport(transportation1, transport1, transport_hours1);
+            case "transportHours1":
+                calculateTranport(transportation1, transport1, transportHours1);
                 break;
-            case "transport_hours2":
-                calculateTranport(transportation2, transport2, transport_hours2);
+            case "transportHours2":
+                calculateTranport(transportation2, transport2, transportHours2);
                 break;
-            case "transport_hours3":
-                calculateTranport(transportation3, transport3, transport_hours3);
+            case "transportHours3":
+                calculateTranport(transportation3, transport3, transportHours3);
                 break;
         }
     });
@@ -102,17 +105,42 @@ transport_hours.forEach((e) => {
 
 function calculateTranport(selectTransportation, display, value){
     let result=selectTransportation.value*value.value;
-    result=result.toFixed(2);
+    result=(result/1000).toFixed(1);
     display.textContent=result;
-    transport_total.textContent=(Number.parseFloat(transport1.textContent)+Number.parseFloat(transport2.textContent)+Number.parseFloat(transport3.textContent)).toFixed(2);
+    result=(Number.parseFloat(transport1.textContent)+Number.parseFloat(transport2.textContent)+Number.parseFloat(transport3.textContent)).toFixed(1);
+    transportTotal.textContent=result;
+    document.querySelector("#impactDeplacement").textContent=result;
+    calculateTotal();
 }
 
 function calculateComputer(){
-    const pa=document.querySelector('#pa').value;
-    const ha=document.querySelector('#ha').value;
-    const pl=document.querySelector('#pl').value;
-    const hl=document.querySelector('#hl').value;
-    const po=document.querySelector('#po').value;
-    const ho=document.querySelector('#ho').value;
-    computer_impact_annuel.textContent=((0.3*(pa*ha+pl*hl+po*ho)/7)*365/1000 + ((1-0.3)*(pa*(ha+hl)+po*ho)/7)*365/1000).toFixed(2);
+    const pa=Number.parseInt(document.querySelector('#pa').value);
+    const ha=Number.parseInt(document.querySelector('#ha').value);
+    const pl=Number.parseInt(document.querySelector('#pl').value);
+    const hl=Number.parseInt(document.querySelector('#hl').value);
+    const po=Number.parseInt(document.querySelector('#po').value);
+    const ho=Number.parseInt(document.querySelector('#ho').value);
+
+    let result=(((0.3*(pa*ha+pl*hl+po*ho)/7)*365/1000+(0.7*(pa*(ha+hl)+po*ho)/7)*365/1000)*319/1000).toFixed(1);
+    computerTotal.textContent=result;
+    calculateDevices();
+}
+
+function calculateDevices(){
+    document.querySelector('#devicesTotal').textContent=(Number.parseFloat(computerTotal.textContent)+Number.parseFloat(screenTotal.textContent)+Number.parseFloat(phoneValue.textContent)).toFixed(1);
+    calculateNumeric();
+}
+
+function calculateCloud(){
+    document.querySelector('#cloudTotal').textContent=(Number.parseFloat(cloudValue.textContent)+Number.parseFloat(emailTotal.textContent)+Number.parseFloat(paperValue.textContent)).toFixed(1)
+    calculateNumeric();
+}
+
+function calculateNumeric(){
+    document.querySelector('#impactNumerique').textContent=(Number.parseFloat(document.querySelector('#devicesTotal').textContent)+Number.parseFloat(document.querySelector('#cloudTotal').textContent)).toFixed(1);
+    calculateTotal();
+}
+
+function calculateTotal(){
+    document.querySelector('#impactTotal').textContent=(Number.parseFloat(document.querySelector('#impactNumerique').textContent)+Number.parseFloat(document.querySelector('#impactDeplacement').textContent)).toFixed(1);
 }
